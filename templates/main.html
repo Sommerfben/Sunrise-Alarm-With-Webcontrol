@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>RPi Web Server</title>
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <style>
+   body, html {
+    height: 100%;
+}
+.bg {
+    /* The image used */
+    background-image: url("http://i1050.photobucket.com/albums/s408/superben51/bg_zpszo6wtvdx.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+
+<body>
+  <div class="bg">
+  <div class="container">
+  <big>
+  <h1 class="text-center" style="color:white">LED light controller</h1>
+   <h3 class="text-center" style="color:white">{{ pins[32].name }}
+   {% if pins[32].state == true %}
+      is currently <strong>on</strong></h2><div class="row">
+      <a href="/{{32}}/off" class="btn btn-block btn-lg btn-danger" role="button">Turn off</a></div>
+   {% else %}
+      is currently <strong>off</strong></h2><div class="row">
+      <a href="/{{32}}/on" class="btn btn-block btn-lg btn-success" role="button">Turn on</a></div>
+   {% endif %}
+ </h3>
+</big>
+</div>
+</div>
+</body>
+</html>
